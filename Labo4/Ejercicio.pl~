@@ -1,9 +1,0 @@
-% Caso base: cuando el número llega a 0, la lista se cierra (vacía).
-almacenar(0, []) :- !.
-
-% Caso recursivo: extrae el último dígito y procesa el resto del número.
-almacenar(Numero, [Digito | RestoLista]) :-
-    Numero > 0,
-    Digito is Numero mod 10,   % Obtiene el último dígito (residuo)
-    Resto is Numero // 10,     % Obtiene el número sin el último dígito (división entera)
-    almacenar(Resto, RestoLista).
